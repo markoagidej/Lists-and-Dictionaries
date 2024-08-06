@@ -45,3 +45,20 @@ Note --- It was tested to create the reversed sublist with stacked list slicing 
 
 # Task 3 Implement a function to merge two sorted lists into a single sorted list. Analyze the time and space complexity of this operation.
 
+def mergeLists(list1, list2):
+    timeStart = time.time()
+    # mergedList = list1 + list2
+    for x in list2:
+        list1.append(x)
+    timeEnd = time.time()
+    print(f"Seconds to complete Task 3 list creation: {timeEnd - timeStart: .7f}")
+    print(f"Size of Task 3 function in bytes is {sys.getsizeof(list1) + sys.getsizeof(timeStart) + sys.getsizeof(timeEnd)}")
+
+mergeLists(smallSqaureList, smallRevRange)
+mergeLists(bigRevRange, medSqaureList)
+
+'''
+Anaylsis:
+Time Complexity is O(n). Once again we have O(k), which simplifies to O(n). The currentyl used loop was tested against list concatenation and was found to be faster. This is most likely due to the efficiency of adding to the end of a list.
+Space Complexity is O(n), simplified from O(n+k).
+'''
