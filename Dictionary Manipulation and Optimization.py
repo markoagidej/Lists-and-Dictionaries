@@ -67,14 +67,20 @@ Space Complexity is O(n). The result is essentially a sublist of the 2 dictionar
 
 # Task 3 Implement a function to count the frequency of each unique word in a list using a dictionary. Analyze the time and space complexity of this operation.
 
-# def wordCounter():
-#     timeStart = time.time()
-    
-#     timeEnd = time.time()
-#     print(f"Seconds to complete Task 1: {timeEnd - timeStart: .7f}")
-#     print(f"Size of Task 1 function in bytes is: {sys.getsizeof() + sys.getsizeof(timeStart) + sys.getsizeof(timeEnd)}")
+def wordCounter(wordList):
+    timeStart = time.time()
+    resultDict = {}
+    for word in wordList:
+        if word in resultDict:
+            resultDict[word] += 1
+        else:
+            resultDict[word] = 1
+    timeEnd = time.time()
+    print(f"Seconds to complete Task 1: {timeEnd - timeStart: .7f}")
+    print(f"Size of Task 1 function in bytes is: {sys.getsizeof(resultDict) + sys.getsizeof(timeStart) + sys.getsizeof(timeEnd)}")
 
 '''
 Anaylsis:
-
+Time Complexity is O(n). One operation is performed for every entry in the data set.
+Space Complexity is O(n). This reflects teh worst case scenario in which every word in the word list is different.
 '''
